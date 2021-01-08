@@ -9,7 +9,7 @@ int main(){
 	fastio;
 
 	int aux;
-	vector<int> entrada, saida;
+	vector<int> entrada,saida;
 
 	cin>>N;
 	for(int i=0; i<N; i++){
@@ -23,36 +23,17 @@ int main(){
 		saida.push_back(aux);
 	}
 
-	cout<<"ENTRADA INICIO: ";
-	for(int i=0; i<entrada.size();i++){
-		cout<<entrada.at(i)<<" ";
-	}
-	cout<<"\n";
-
-	cout<<"SAIDA INICIO: ";
-	for(int i=0; i<saida.size();i++){
-		cout<<saida.at(i)<<" ";
-	}
-	cout<<"\n\n";
-
-	for(int i=0; i<entrada.size(); i++){
-		for(int j=0; j<saida.size(); j++){
-			if(entrada.at(i) == saida.at(j)){
-				entrada.erase(entrada.begin()+i);
-				saida.erase(saida.begin()+j);
+	for(int i=0; i<saida.size(); i++){
+		for(int j=0; j<entrada.size(); j++){
+			if(saida.at(i) == entrada.at(j)){
+				saida.erase(saida.begin()+i);
+				entrada.erase(entrada.begin()+j);
 			}
 		}
 	}
 
-	cout<<"ENTRADA FIM: ";
 	for(int i=0; i<entrada.size();i++){
 		cout<<entrada.at(i)<<" ";
-	}
-	cout<<"\n";
-
-	cout<<"SAIDA FIM: ";
-	for(int i=0; i<saida.size();i++){
-		cout<<saida.at(i)<<" ";
 	}
 	cout<<"\n";
 
